@@ -1,0 +1,45 @@
+-- Simple Synthesizer Example
+-- RONIN Language for MAITREYA DAW
+
+module SimpleSynth where
+
+-- Basic sine wave synthesizer
+sineSynth :: Frequency -> Amplitude -> AudioSignal
+sineSynth freq amp = siege $ sin (const freq * 2π * time) * const amp
+
+-- Add envelope
+envelopedSynth :: Frequency -> Amplitude -> AudioSignal
+envelopedSynth freq amp = sineSynth freq amp * adsr 0.1 0.2 0.7 0.5
+
+-- Golden ratio harmony
+goldenSynth :: Frequency -> AudioSignal
+goldenSynth base = envelopedSynth base 0.8 |> filter LowPass |> gain (φ * 0.618)
+
+-- Main output
+main :: AudioSignal
+main = goldenSynth 440
+
+-- Type definitions
+type Frequency = Float
+type Amplitude = Float
+type AudioSignal = Signal Float
+
+-- Filter types
+data FilterType = LowPass | HighPass | BandPass | Notch
+
+-- Helper functions
+adsr :: Float -> Float -> Float -> Float -> Envelope
+adsr a d s r = siege $ case time of
+  t | t < a -> t / a
+  t | t < a + d -> 1 + (s - 1) * (t - a) / d
+  t | t < a + d + r -> s * (1 - (t - a - d) / r)
+  _ -> 0
+
+filter :: FilterType -> AudioSignal -> AudioSignal
+filter LowPass signal = lowpass signal
+filter HighPass signal = highpass signal
+filter BandPass signal = bandpass signal
+filter Notch signal = notch signal
+
+gain :: Float -> AudioSignal -> AudioSignal
+gain amount signal = signal * const amount

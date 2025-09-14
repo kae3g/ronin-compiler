@@ -1,0 +1,77 @@
+name: ronin-compiler
+version: 0.1.0.0
+synopsis: RONIN Language Compiler for MAITREYA DAW
+description: |
+  A sophisticated compiler for the RONIN domain-specific language,
+  designed for audio processing and music composition in the MAITREYA DAW.
+  
+  Features:
+  - Lexical analysis and parsing
+  - Type checking and inference
+  - Code generation for multiple targets (Haskell, Rust, Clojure)
+  - Optimized audio processing pipeline generation
+  - SIEGE expression integration
+
+author: kae3g (b122m faeb internet identity)
+maintainer: kae3g@github.com
+category: Audio, Compiler, DSL
+homepage: https://github.com/kae3g/ronin-compiler
+bug-reports: https://github.com/kae3g/ronin-compiler/issues
+license: Apache-2.0
+license-file: LICENSE
+
+extra-source-files:
+  - README.md
+  - CHANGELOG.md
+  - examples/*.ronin
+  - docs/*.md
+
+dependencies:
+  - base >= 4.14 && < 5
+  - containers >= 0.6
+  - text >= 1.2
+  - parsec >= 3.1
+  - mtl >= 2.2
+  - transformers >= 0.5
+  - vector >= 0.12
+  - aeson >= 1.5
+  - prettyprinter >= 1.7
+  - lens >= 4.17
+  - template-haskell >= 2.15
+
+library:
+  source-dirs: src
+  ghc-options:
+    - -Wall
+    - -Wcompat
+    - -Wincomplete-record-updates
+    - -Wincomplete-uni-patterns
+    - -Wredundant-constraints
+    - -Wpartial-fields
+    - -Widentities
+    - -Wmissing-export-lists
+    - -Wmissing-home-modules
+
+executables:
+  ronin:
+    main: Main.hs
+    source-dirs: exe
+    ghc-options:
+      - -Wall
+      - -Wcompat
+      - -threaded
+      - -rtsopts
+      - -with-rtsopts=-N
+
+tests:
+  ronin-compiler-tests:
+    main: Spec.hs
+    source-dirs: test
+    ghc-options:
+      - -Wall
+      - -Wcompat
+    dependencies:
+      - hspec >= 2.7
+      - hspec-discover >= 2.7
+      - QuickCheck >= 2.14
+      - ronin-compiler

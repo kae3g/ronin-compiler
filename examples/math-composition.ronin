@@ -1,0 +1,58 @@
+-- Mathematical Composition Example
+-- Demonstrates SIEGE expressions and golden ratio integration
+
+module MathComposition where
+
+-- Fibonacci-based frequencies using golden ratio
+fibFreqs :: [Frequency]
+fibFreqs = [440 * φ^n | n <- [0..7]]
+
+-- Golden ratio harmony
+goldenHarmony :: AudioSignal
+goldenHarmony = sum [sin (f * 2π * time) * (φ^-n) | f <- fibFreqs, n <- [0..7]]
+
+-- Fractal composition
+fractalSynth :: Int -> Frequency -> AudioSignal
+fractalSynth 0 freq = sin (freq * 2π * time)
+fractalSynth n freq = fractalSynth (n-1) freq + 
+                      fractalSynth (n-1) (freq * φ) * 0.5
+
+-- Mathematical envelope with golden ratio
+mathEnvelope :: AudioSignal
+mathEnvelope = siege $ exp (-time * φ) * sin (time * 2π * φ)
+
+-- Complex mathematical relationship
+complexSynth :: Frequency -> AudioSignal
+complexSynth base = siege $ 
+  sin (base * 2π * time) * 
+  cos (base * φ * 2π * time) * 
+  exp (-time * φ * 0.1) *
+  (1 + sin (base * φ^2 * 2π * time) * 0.3)
+
+-- Main composition
+main :: AudioSignal
+main = goldenHarmony + fractalSynth 3 220 + complexSynth 330
+
+-- Type definitions
+type Frequency = Float
+type AudioSignal = Signal Float
+
+-- Mathematical constants
+φ :: Float
+φ = 1.618033988749895
+
+π :: Float
+π = 3.141592653589793
+
+τ :: Float
+τ = 2 * π
+
+-- Power operator for golden ratio
+(^) :: Float -> Int -> Float
+x ^ 0 = 1
+x ^ n = x * (x ^ (n-1))
+
+-- Sum function for lists
+sum :: [AudioSignal] -> AudioSignal
+sum [] = const 0
+sum (x:xs) = x + sum xs
