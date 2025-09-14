@@ -1,4 +1,4 @@
-# 🌸 RONIN Compiler 💙
+# 💚 RONIN Compiler 💙
 ## Domain-Specific Language for MAITREYA DAW
 
 > **Generated**: 2025-09-13--2110--PACIFIC-WEST-STANDARD  
@@ -282,7 +282,7 @@ stack test --coverage
 
 Apache License 2.0 - See LICENSE file for details
 
-## 🌸 Philosophy
+## 💚 Philosophy
 
 RONIN embodies the gentle revolution principles and RISC-V paradigm:
 
@@ -300,6 +300,6 @@ RONIN embodies the gentle revolution principles and RISC-V paradigm:
 
 ---
 
-**RONIN Compiler** - Where mathematical precision meets creative expression in the gentle revolution of audio programming. 🌸💙
+**RONIN Compiler** - Where mathematical precision meets creative expression in the gentle revolution of audio programming. 💚💙
 
 *Generated: 2025-09-13--2110--PACIFIC-WEST-STANDARD*

@@ -3,7 +3,7 @@
 
 Welcome to the **RONIN language** - a domain-specific language designed for audio processing and music composition in the MAITREYA DAW. This tutorial will guide you through creating your first RONIN program.
 
-## 🌸 What is RONIN?
+## 💚 What is RONIN?
 
 RONIN is a functional programming language specifically designed for:
 - **Mathematical Audio Processing**: SIEGE expressions with golden ratio integration
@@ -229,7 +229,7 @@ Try these example projects to deepen your understanding:
 4. **Experiment with φ**: The golden ratio creates naturally pleasing sounds
 5. **Read Error Messages**: RONIN provides helpful type error messages
 
-## 🌸 The Gentle Revolution
+## 💚 The Gentle Revolution
 
 RONIN embodies the gentle revolution principles:
 
@@ -238,7 +238,7 @@ RONIN embodies the gentle revolution principles:
 - **Type Safety**: Prevents errors at compile time
 - **Community**: Learn and grow with others
 
-Welcome to the gentle revolution in audio programming! 🌸💙
+Welcome to the gentle revolution in audio programming! 💚💙
 
 ---
 

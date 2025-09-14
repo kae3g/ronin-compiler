@@ -259,4 +259,4 @@ The RONIN Compiler is designed to integrate seamlessly with the MAITREYA DAW eco
 
 ---
 
-*This API documentation is part of the RONIN Compiler for MAITREYA DAW - the gentle revolution in audio programming.* 🌸💙
+*This API documentation is part of the RONIN Compiler for MAITREYA DAW - the gentle revolution in audio programming.* 💚💙
