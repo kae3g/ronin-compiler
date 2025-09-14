@@ -7,7 +7,7 @@
 
 ## 🎵 Overview
 
-RONIN is a domain-specific language designed for audio processing and music composition in the MAITREYA DAW. The RONIN compiler transforms high-level musical expressions into optimized, multi-target audio processing code.
+RONIN is a domain-specific language designed for audio processing and music composition in the MAITREYA DAW. Built on RISC-V paradigm principles of simplicity, modularity, and open standards, the RONIN compiler transforms high-level musical expressions into optimized, multi-target audio processing code.
 
 ## ✨ Features
 
@@ -17,6 +17,7 @@ RONIN is a domain-specific language designed for audio processing and music comp
 - **Functional Composition**: Elegant function composition and pipelining
 - **Pattern Matching**: Powerful pattern matching for audio structures
 - **Lazy Evaluation**: Efficient evaluation of audio processing graphs
+- **RISC-V Principles**: Minimal, orthogonal instruction design with extensible syntax
 
 ### Compilation Targets
 - **Haskell Core**: Type-safe mathematical audio processing
@@ -29,6 +30,7 @@ RONIN is a domain-specific language designed for audio processing and music comp
 - **Constant Folding**: Compile-time evaluation of constant expressions
 - **SIMD Vectorization**: Automatic vectorization for performance
 - **Memory Optimization**: Efficient memory layout for real-time processing
+- **RISC-V Efficiency**: Simple, efficient instruction sequences with reduced complexity
 
 ## 🚀 Quick Start
 
@@ -282,13 +284,19 @@ Apache License 2.0 - See LICENSE file for details
 
 ## 🌸 Philosophy
 
-RONIN embodies the gentle revolution principles:
+RONIN embodies the gentle revolution principles and RISC-V paradigm:
 
 - **Mathematical Beauty**: Every construct has mathematical meaning
 - **Educational Value**: Code teaches as it executes
 - **Type Safety**: Prevents errors at compile time
 - **Performance**: Optimized for real-time audio processing
 - **Accessibility**: Readable and understandable syntax
+- **RISC-V Principles**: 
+  - **Simplicity**: Minimal, orthogonal language design
+  - **Modularity**: Extensible syntax with standard extensions
+  - **Open Source**: Royalty-free, community-driven development
+  - **Efficiency**: Reduced complexity for optimal performance
+  - **Verifiability**: Formal verification of language semantics
 
 ---
 
